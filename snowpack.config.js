@@ -1,13 +1,15 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: {url: '/', static: true},
-    src: {url: '/dist'},
+    src: {url: '/'},
   },
-  plugins: ['@snowpack/plugin-typescript'],
+  plugins: [
+    '@snowpack/plugin-typescript',
+    ['./tistory-snowpack-plugin.js', {}]
+  ],
   routes: [
     /* Enable an SPA Fallback in development: */
-    // {"match": "routes", "src": ".*", "dest": "/index.html"},
+    {"match": "routes", "src": ".*", "dest": "/skin.html"},
   ],
   optimize: {
     /* Example: Bundle your final build: */
